@@ -16,6 +16,7 @@ default: &default
   username: <%= ENV['pg_username'] %>
   password: <%= ENV['pg_password'] %>
   # if rake db:setup returns insufficient permission, runs ALTER USER user CREATEDB;
+  # GRANT ALL PRIVILEGES ON DATABASE  TO MY USER ;
 
 
 development:
