@@ -6,14 +6,22 @@
 #
 default: &default
   # adapter: sqlite3  # old
-  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  # My configs
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  # https://stackoverflow.com/questions/17151324/securely-providing-the-database-password-in-a-rails-app
+  username: <%= ENV['pg_username'] %>
+  password: <%= ENV['pg_password'] %>
+
 
 development:
   <<: *default
   # database: db/development.sqlite3  # old
   database: railsfood
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
