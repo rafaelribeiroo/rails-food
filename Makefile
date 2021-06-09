@@ -21,6 +21,12 @@ it:
 db-changed:
 	bundle exec rails db:setup
 
+r:
+	bundle exec rails routes
+
+r_specific:
+	bundle exec rails routes -g  # part_resource_name
+
 migrate:
 	bundle exec rails db:migrate
 
