@@ -35,3 +35,6 @@ create:
 
 destroy:
 	bundle exec rails destroy model $(RUN_ARGS)
+
+run:
+	rails server
